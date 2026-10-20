@@ -1,0 +1,13 @@
+# 工具缓存与打包产物
+.codeartsdoer/
+.codegraph/
+*.zip
+nul
+__pycache__/
+*.pyc
+
+# 本地开发交接/临时文档（含本机绝对路径）
+HANDOFF.md
+tools/RESUME.md
+tools/_preview.json
+tools/parse_base.py

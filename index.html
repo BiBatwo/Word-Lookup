@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考研单词查阅 · 词源详解</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">词</span>
+    <div>
+      <h1>考研单词查阅</h1>
+      <p class="sub">词源 · 引申 · 例句详解</p>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="输入英文单词或中文释义搜索…" autocomplete="off" spellcheck="false">
+    <button id="clearSearch" class="clear-btn" title="清空" hidden>×</button>
+  </div>
+  <div class="stats">
+    <span id="statTotal">—</span>
+    <span class="dot">·</span>
+    <span id="statDeep" title="已生成深度内容的词条数">—</span>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <section class="panel">
+      <h2>首字母</h2>
+      <div id="letters" class="letters"></div>
+    </section>
+
+    <section class="panel">
+      <h2>词性</h2>
+      <div id="posFilter" class="pos-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>我的学习</h2>
+      <label class="chk"><input type="checkbox" id="favOnly"> 只看收藏 <b id="favCount">0</b></label>
+      <label class="chk"><input type="checkbox" id="hideMastered"> 隐藏已掌握 <b id="masteredCount">0</b></label>
+      <button id="resetProgress" class="link-btn">清空学习记录</button>
+    </section>
+
+    <section class="panel">
+      <h2>深度内容进度</h2>
+      <div class="progress-bar"><i id="progressFill"></i></div>
+      <p class="progress-text" id="progressText">—</p>
+    </section>
+  </aside>
+
+  <main class="main">
+    <div class="list-head">
+      <span id="listInfo">加载中…</span>
+      <select id="sortSel" class="mini-select">
+        <option value="abc">按字母排序</option>
+        <option value="len">按长度排序</option>
+      </select>
+    </div>
+    <div id="list" class="word-list"></div>
+    <div id="listMore" class="more-wrap"></div>
+    <div id="empty" class="empty" hidden>没有匹配的单词</div>
+  </main>
+</div>
+
+<div id="drawer" class="drawer" hidden>
+  <div class="drawer-backdrop"></div>
+  <div class="drawer-panel">
+    <button id="drawerClose" class="drawer-close" title="关闭">×</button>
+    <div id="drawerBody" class="drawer-body"></div>
+  </div>
+</div>
+
+<script src="data/words.js"></script>
+<script src="data/progress.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
